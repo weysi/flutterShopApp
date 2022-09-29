@@ -1,6 +1,5 @@
 # flutter_shop_app
-
-A new Flutter project.
+Shop Management with Flutter
 
 ## Getting Started
 
