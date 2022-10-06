@@ -1,13 +1,12 @@
 # flutter_shop_app
-
-A new Flutter project.
+Shop Management with Flutter
 
 ## Getting Started
 
 This project is a starting point for a Flutter application.
 
 A few resources to get you started if this is your first Flutter project:
-
+- https://www.udemy.com/course/learn-flutter-dart-to-build-ios-android-apps/ -- Academind by Maximilian Schwarzmüller
 - [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
 - [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
