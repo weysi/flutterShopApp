@@ -24,9 +24,7 @@ class UserProductsScreen extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {
-              Navigator.of(context).pushNamed(
-                EditProductScreen.routeName,
-              );
+              Navigator.of(context).pushNamed(EditProductScreen.routeName);
             },
             icon: Icon(Icons.add),
             color: Colors.white,
@@ -51,7 +49,7 @@ class UserProductsScreen extends StatelessWidget {
                           itemBuilder: (_, i) => Column(
                             children: [
                               UserProductItem(
-                                productsData.items[i].id,
+                                productsData.items[i].id!,
                                 productsData.items[i].title,
                                 productsData.items[i].imageUrl,
                               ),

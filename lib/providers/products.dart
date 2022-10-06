@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:ffi';
 import 'package:flutter/material.dart';
 import '../models/http_exception.dart';
 import './product.dart';
@@ -105,7 +106,7 @@ class Products with ChangeNotifier {
   }
 
   Product findById(String id) {
-    return _items.firstWhere((prod) => prod.id == id);
+    return _items.firstWhere((prod) => prod.id.toString() == id);
   }
 
   addProduct(Product product) async {

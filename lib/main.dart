@@ -66,21 +66,30 @@ class MyApp extends StatelessWidget {
                             ? SplashScreen()
                             : AuthScreen()),
             theme: ThemeData(
-                colorScheme: ColorScheme.fromSwatch(
-                  primarySwatch: Colors.purple,
-                  accentColor: Colors.deepOrange,
-                ).copyWith(secondary: Colors.deepOrange),
-                fontFamily: 'Lato',
-                pageTransitionsTheme: PageTransitionsTheme(builders: {
-                  TargetPlatform.android: CustomPageTransitionBuilder(),
-                  TargetPlatform.iOS: CustomPageTransitionBuilder()
-                })),
+              colorScheme: ColorScheme.fromSwatch(
+                primarySwatch: Colors.purple,
+                accentColor: Colors.deepOrange,
+              ).copyWith(secondary: Colors.deepOrange),
+              fontFamily: 'Lato',
+              // pageTransitionsTheme: PageTransitionsTheme(
+              //   builders: {
+              //     TargetPlatform.android: CustomPageTransitionBuilder(),
+              //     TargetPlatform.iOS: CustomPageTransitionBuilder()
+              //   },
+              // ),
+            ),
             routes: {
               ProductDetailScreen.routeName: (ctx) => ProductDetailScreen(),
               CartScreen.routeName: (ctx) => CartScreen(),
               OrdersScreen.routeName: (ctx) => OrdersScreen(),
               UserProductsScreen.routeName: (ctx) => UserProductsScreen(),
               EditProductScreen.routeName: (ctx) => EditProductScreen(),
+            },
+            onGenerateRoute: (settings) {
+              if (settings.name == EditProductScreen.routeName) {
+                return MaterialPageRoute(
+                    builder: (context) => EditProductScreen());
+              }
             },
           ),
         ),

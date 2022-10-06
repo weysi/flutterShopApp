@@ -28,7 +28,7 @@ class ProductItem extends StatelessWidget {
                 arguments: product.id);
           },
           child: Hero(
-            tag: product.id,
+            tag: product.id!,
             child: FadeInImage(
               placeholder: AssetImage('assets/images/product-placeholder.png'),
               image: NetworkImage(product.imageUrl),
@@ -58,7 +58,7 @@ class ProductItem extends StatelessWidget {
           ),
           trailing: IconButton(
             onPressed: () {
-              cart.addItem(product.id, product.price, product.title);
+              cart.addItem(product.id!, product.price, product.title);
               ScaffoldMessenger.of(context).hideCurrentSnackBar();
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
@@ -68,7 +68,7 @@ class ProductItem extends StatelessWidget {
                   duration: Duration(seconds: 2),
                   action: SnackBarAction(
                     label: 'UNDO',
-                    onPressed: () => cart.removeSingleItem(product.id),
+                    onPressed: () => cart.removeSingleItem(product.id!),
                   ),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10)),
